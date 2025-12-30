@@ -7,11 +7,10 @@
 {% block content %}
 {% for item in items %}
 <article>
-  <p>{{ item["id"] }}</p>
-  <p>{{ item["priority"] }}</p>
   <p class="item">{{ item["item"] }}</p>
-  <aside>Entered {{ item["user"] }} on {{ item["created"].strftime("%b %d, %Y at %I:%M%p") }}</aside>
-  <p>{{ item["completed"] }}</p>
+  <p>
+  <aside>Entered by {{ item["user"] }} on {{ item["created"].strftime("%b %d, %Y at %I:%M%p") }} - Priority: {{
+    item["priority"] }}</aside>
 </article>
 {% endfor %}
 {% endblock content %}

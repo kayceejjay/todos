@@ -9,4 +9,3 @@ def home():
 @bp.route("/about")
 def about():
     return render_template("lists/about.html")
-# Blueprint for lists

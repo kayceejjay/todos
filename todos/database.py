@@ -1,6 +1,10 @@
 import sqlite3
 import click
+from datetime import datetime
 from flask import current_app, g
+
+# Register timestamp converter for SQLite
+sqlite3.register_converter("TIMESTAMP", lambda v: datetime.fromisoformat(v.decode()))
 
 def init_app(app): # uses click to add database initialization command to Flask's CLI
     app.teardown_appcontext(close_db) # close the database connection when the app is done processing
