@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ToDo List - {% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+  {% include("_navigation.html") %}
+  <div class="container">
+    <h1>To Do List</h1>
+
+    <section>
+      <header>
+        {% block header %}{% endblock header %}
+      </header>
+      <main>
+        {% block content %}<p>No Items.</p>{% endblock content %}
+      </main>
+    </section>
+
+  </div>
+  {% include("_footer.html") %}
+</body>
+
+</html>

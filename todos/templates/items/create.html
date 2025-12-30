@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h2>{% block title %}Add Post{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+<form method="post">
+  <div class="form-group">
+    <label class="frm-lbl" for="user">Your Name</label>
+    <input type="text" name="user" id="user" value="{{ request.form['user'] }}" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="frm-lbl" for="item">To Do Item</label>
+    <textarea name="item" id="item" class="form-control">{{ request.form['item'] }}</textarea>
+  </div>
+  <div class="form-group">
+    <label class="frm-lbl" for="priority">Priority</label>
+    <input type="number" name="priority" id="priority" value="{{ request.form['priority'] }}" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Post Item" class="submit-btn">
+  </div>
+</form>
+{% endblock content %}
